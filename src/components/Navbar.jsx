@@ -1,9 +1,10 @@
 import { Icon } from "@iconify/react/dist/iconify.js";
 import { Avatar } from "antd";
 import React, { useState } from "react";
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink, useLocation, useNavigate } from "react-router-dom";
 
 const Navbar = () => {
+  const location = useLocation();
   const [minmize, setMinimize] = useState(false);
   return (
     <div className="bg-black md:h-screen text-white p-6 transition">
@@ -18,13 +19,15 @@ const Navbar = () => {
                 T
               </Avatar>
             ) : (
-              <p className="text-xl">Task</p>
+              <p className="text-xl md:text-4xl">Task</p>
             )}
           </NavLink>
           <div className="flex gap-3 md:flex-col">
             <NavLink
               to="/"
-              className="hover:text-hover-green md:text-2xl flex items-center gap-2 md:mt-5"
+              className={`hover:text-hover-green md:text-2xl flex items-center gap-2 md:mt-5 ${
+                location.pathname === "/" ? "text-green" : ""
+              }`}
             >
               <span>
                 <Icon
@@ -37,7 +40,9 @@ const Navbar = () => {
             </NavLink>
             <NavLink
               to="/task/create"
-              className="hover:text-hover-green md:text-2xl flex items-center gap-2"
+              className={`hover:text-hover-green md:text-2xl flex items-center gap-2 ${
+                location.pathname === "/task/create" ? "text-green" : ""
+              }`}
             >
               <span>
                 <Icon
@@ -50,7 +55,9 @@ const Navbar = () => {
             </NavLink>
             <NavLink
               to="/tasks"
-              className="hover:text-hover-green md:text-2xl flex items-center gap-2"
+              className={`hover:text-hover-green md:text-2xl flex items-center gap-2 ${
+                location.pathname === "/tasks" ? "text-green" : ""
+              }`}
             >
               <span>
                 <Icon

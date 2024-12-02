@@ -7,6 +7,7 @@ export default {
       black: "#1f1f1f",
       white: "#ffff",
       "hover-green": "#bdffd1",
+      blue: "#005cbf",
     },
     extend: {},
   },
