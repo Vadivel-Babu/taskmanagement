@@ -11,7 +11,7 @@ const TaskSlice = createSlice({
     tasks: getDataFromLocalStorage(),
   },
   reducers: {
-    //add todo to todos
+    //add task to tasks
     addTask(state, action) {
       state.tasks.push(action.payload);
       localStorage.setItem(
@@ -19,7 +19,7 @@ const TaskSlice = createSlice({
         JSON.stringify(state.tasks.map((todo) => todo))
       );
     },
-    //delete todo from todos
+    //delete task from tasks
     removeTask(state, action) {
       const filtered = state.tasks.filter((task) => task.id !== action.payload);
       state.tasks = filtered;
@@ -28,11 +28,11 @@ const TaskSlice = createSlice({
         JSON.stringify(state.tasks.map((task) => task))
       );
     },
-    //change the checking status for the todo
-    handleCheck(state, action) {
+    //update the specific task
+    updateTask(state, action) {
       state.tasks = state.tasks.map((task) => {
-        if (task.id === action.payload) {
-          task.isChecked = !todo.isChecked;
+        if (task.id === action.payload.id) {
+          task = action.payload;
         }
         return task;
       });
@@ -47,4 +47,5 @@ const TaskSlice = createSlice({
 const { reducer } = TaskSlice;
 
 export default reducer;
-export const { addTask, handleCheck, removeTask } = TaskSlice.actions;
+export const { addTask, handleCheck, removeTask, updateTask } =
+  TaskSlice.actions;

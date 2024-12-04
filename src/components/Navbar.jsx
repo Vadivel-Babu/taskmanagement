@@ -66,7 +66,7 @@ const Navbar = () => {
                   fontSize={25}
                 />
               </span>
-              {!minmize && <p className="hidden md:inline-block">All Task</p>}
+              {!minmize && <p className="hidden md:inline-block">Tasks</p>}
             </NavLink>
           </div>
         </div>
