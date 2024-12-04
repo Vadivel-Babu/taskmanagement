@@ -29,11 +29,11 @@ const HomePage = () => {
   return (
     <div className="container-lg p-3 mx-auto">
       <div className="flex gap-3 items-center justify-evenly  flex-wrap mb-10">
-        <div className={`shadow-lg rounded-lg bg-[#3beb1c] text-[#fff] p-3`}>
+        <div className={`shadow-lg rounded-lg bg-[#ebe81c] text-[#000] p-3`}>
           <h1 className="text-xl font-semibold tracking-wider">Total Task</h1>
           <h1 className="text-2xl font-bold">{tasks.length ?? 0}</h1>
         </div>
-        <div className={`shadow-lg rounded-lg bg-[#e7eb1c] text-[#000] p-3`}>
+        <div className={`shadow-lg rounded-lg bg-[#3beb1c] text-[#fff] p-3`}>
           <h1 className="text-xl font-semibold tracking-wider">
             Completed Task
           </h1>
